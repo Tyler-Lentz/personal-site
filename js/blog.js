@@ -1,6 +1,6 @@
 import {myConfirm, myAlert} from "./customdialog.js"
-import { update, push, getDatabase, ref, get, child, onValue, remove, set } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js";
-import { getAuth, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+import { update, push, getDatabase, ref, get, child, onValue, remove, set } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-database.js";
+import { getAuth, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
 
 import {app} from "./analytics.js"
 import {formatDate} from "./date.js"

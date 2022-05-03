@@ -1,5 +1,5 @@
 import {app} from './analytics.js'
-import { update, push, getDatabase, ref, get, child, onValue, remove, set } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js";
+import { update, push, getDatabase, ref, get, child, onValue, remove, set } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-database.js";
 import {myAlert} from './customdialog.js'
 
 const db = getDatabase(app);
