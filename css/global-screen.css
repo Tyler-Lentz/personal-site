@@ -1,0 +1,175 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(../fonts/Roboto-Regular.ttf) format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "RobotoSlab";
+    src: url(../fonts/RobotoSlab-VariableFont_wght.ttf) format("truetype");
+    font-display: swap;
+}
+
+
+
+/* 
+CSS Reset from 
+https://medium.com/codex/progressive-enhancement-part-3-getting-a-solid-baseline-before-layout-d6dfd1c87ae5
+*/
+
+html,body,div,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,form,fieldset,caption,table,tr,td,th,address,blockquote,img {
+    margin:0;
+    padding:0;
+}
+
+img, fieldset, object {
+    border:none;
+}
+
+*, *:after, *:before {
+    flex:1 0 auto; /* safari bugfix */
+    box-sizing:border-box;
+}
+
+button, label {
+    cursor:pointer;
+}
+
+html, body {
+    min-height:100%;
+}
+
+/* Set font to everything by default */
+
+body, button, input, table, textarea, select, footer {
+    font-family: "Roboto", sans-serif;
+}
+
+h1 {
+    font-family: "RobotoSlab", serif;
+}
+
+ /* Defining variables */
+ 
+body {
+    --nav-bar-color-page-nohover: white;
+    --nav-bar-color-page-hover: silver;
+    --nav-bar-padding: 10px;
+    --nav-bar-border-color: black;
+    --nav-bar-border-type: solid;
+    --nav-bar-border-width: 2px;
+    --nav-bar-zindex: 100;
+
+    --default-background-color: powderblue;
+
+    --hr-border-color: black;
+    --hr-border-type: solid;
+    --hr-border-width: 1px;
+    --img-border-radius: 5%;
+
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.5rem;
+
+    --paragraph-font-size: 1.25em;
+    --paragraph-line-height: 150%;
+    --paragraph-text-shadow: 0 0 0.5em white;
+
+    background-color: var(--default-background-color);
+}
+
+/* Making all images and videos have curved borders, because I like how it looks */
+
+img {
+    border-radius: var(--img-border-radius);
+}
+
+video {
+    border-radius: var(--img-border-radius);
+}
+
+/* I use HRs inbetween some sections, so setting a standard border style */
+
+hr {
+    border: var(--hr-border-color) var(--hr-border-type) var(--hr-border-width);
+}
+
+/* Global header settings across all pages */
+
+h1 {
+    font-size: var(--h1-font-size);
+    text-align: center;
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+    text-align: center;
+}
+
+h3, h4 {
+    text-align: center;
+}
+
+/* Setting up the nav bar */
+
+header {
+    padding: var(--nav-bar-padding);
+    background-color: var(--nav-bar-color-page-nohover);
+    top: 0;
+    position: sticky;
+    border: var(--nav-bar-border-color) var(--nav-bar-border-width) var(--nav-bar-border-type);
+    z-index: var(--nav-bar-zindex);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;  
+}
+
+nav li {
+    display: inline-block;
+}
+
+@media (max-width: 27rem) {
+    nav li {
+        margin: 1.25em 0em;
+    }
+}
+
+nav a {
+    padding: var(--nav-bar-padding);
+    background-color: var(--nav-bar-color-page-nohover);
+    text-decoration: none;
+    color: blue;
+}
+
+nav a:hover {
+    background-color: var(--nav-bar-color-page-hover);
+}
+
+/* Set up image galleries which are always flex 
+   Used by both the project page and the about-me page */
+
+ul.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+ul.gallery li {
+    align-self: center;
+}
+
+ul.gallery figure {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* How I have all my paragraph elements set up */
+p {
+    font-size: var(--paragraph-font-size);
+    line-height: var(--paragraph-line-height);
+    text-shadow: var(--paragraph-text-shadow);
+}

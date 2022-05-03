@@ -1,0 +1,211 @@
+nav > ul > li:nth-child(5) > a {
+    text-decoration: underline;
+}
+
+output ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+}
+
+output li {
+    margin: 1em;
+    padding: 1em;
+    border: 0.2em black double;
+    background-color: white;
+}
+
+@media (max-width: 60rem) {
+    output ul {
+        display: flex;
+        align-items:flex-start;
+        justify-content:center;
+        flex-direction: column;
+    } 
+
+    output li {
+        align-self: center;
+    }
+}
+
+.post-title {
+    font-size: 1.5em;
+    float: left;
+}
+
+.post-date {
+    font-size: 1.5em;
+    float: right;
+}
+
+.post-summary {
+    font-size: 1em;
+    clear:both;
+}
+
+.post-author {
+    float: right;
+}
+
+.post-tag {
+    float: right;
+    clear: right;
+}
+
+.edit-button, .delete-button {
+    float: left;
+    border: none;
+    padding: 1em;
+    margin: 0;
+    text-decoration: none;
+    background-color:white;
+    cursor:pointer;
+    text-align:center;
+    border-radius: 50%;
+}
+
+li button:hover {
+    background-color:silver;
+}
+
+main {
+    text-align: center;
+}
+
+dialog {
+    text-align: center;
+    width: 40%;
+    display: block;
+}
+
+dialog p {
+    font-size: 1.5em;
+    margin: 1em;
+}
+
+dialog button {
+    border: none;
+    display: inline-block;
+    padding: 1em;
+    margin: 0em 1em;
+    text-decoration: none;
+    background-color: gainsboro;
+    cursor:pointer;
+    text-align:center;
+    border-radius: 5%;
+}
+
+#add-post-button,
+#login-button,
+#logout-button,
+#filter-button {
+    border: 0.1em black solid;
+    padding: 1em;
+    margin: 1em;
+    background-color:white;
+    cursor:pointer;
+    text-align: center;
+    border-radius: 10%;
+}
+
+#add-post-button:hover,
+#login-button:hover,
+#logout-button:hover,
+#filter-button:hover {
+    background-color: silver;
+}
+
+
+dialog button:hover {
+    background-color: silver;
+}
+
+dialog input[type="text"] {
+    display: block;
+    margin: 1em;
+    width: 95%;
+}
+
+dialog textarea {
+    display: block;
+    margin: 1em;
+    width: 95%;
+    height: 20em;    
+    resize: none;
+}
+
+dialog label {
+    text-align:left;
+}
+
+dialog .submit-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 1 min-content;
+    margin: 1em;
+}
+
+dialog fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Transition when hovering over post */
+.post-card {
+   transition: background-color .25s;
+}
+
+.post-card:hover {
+   background-color: yellow;
+}
+
+#login-display {
+    float: center;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+noscript {
+    text-align: center;
+}
+
+#blog-bar {
+    display: inline-flex;
+    flex-direction: row;
+    flex: 1 1 fit-content;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items:center;
+}
+
+#filter-form {
+    margin-left: 0.5em;
+}
+
+#filter-form > fieldset {
+    border: 3px double black;
+    width: fit-content;
+    background-color: gainsboro;
+    text-align: center;
+}
+
+#filter-form > fieldset > legend {
+    background-color: black;
+    color:gainsboro;
+}
+
+#login-container {
+    margin-right: 0.5em;
+    background-color: gainsboro;
+    border: 3px black double;
+}
+
+#login-button-list {
+    list-style-type: none;
+}
+
+#login-button-list li {
+    display: inline;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="Contact Me Page" />
+	<meta name="author" content="Tyler Lentz" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Contact Me</title>
+    <script type="module" src="../js/contact.js"></script>
+    <script type="module" src="../js/analytics.js"></script>
+    <script type="module" src="../js/customdialog.js"></script>
+	<link href="../favicon.ico" rel="icon" />
+	<link href="../css/global-screen.css" rel="stylesheet" media="screen"/>
+	<link href="../css/contact-me-screen.css" rel="stylesheet" media="screen"/>
+</head>
+
+<body>
+	<header>
+        <nav>
+            <ul>
+				<li><a href="/">Home</a></li>
+                <li><a href="contact-me.html">Contact Me</a></li>
+                <li><a href="about-me.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+	</header>
+
+	<!-- TODO: action for the form-->
+	<main>
+		<h1>Contact Me</h1>
+
+		<hr>
+
+		<noscript>
+			<p>Javascript is required to use this page.</p>
+		</noscript>
+
+		<form id="contact" action="/" method="get">
+			<fieldset>
+				<label for="input_fname">First Name: </label>
+				<input type="text" name="input_fname" id="input_fname" required>
+			</fieldset>
+
+			<fieldset>
+				<label for="input_lname">Last Name: </label>
+				<input type="text" name="input_fname" id="input_lname" required>
+			</fieldset>
+
+			<fieldset>
+				<label for="input_email">Email Address: </label>
+				<input type="email" name="input_email" id="input_email" required>
+			</fieldset>
+
+			<fieldset>
+				<label for="input_message">Message: </label>
+				<textarea name="input_message" id="input_message" required></textarea>
+			</fieldset>
+
+			<fieldset>
+				<label for="contact_submit"></label>
+				<input type="submit" name="contact_submit" id="contact_submit">
+			</fieldset>
+		</form>
+	</main>
+
+</body>
+
+</html>

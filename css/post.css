@@ -1,0 +1,25 @@
+#post-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    padding: 1em;
+}
+
+#post-title {
+    font-size: 3em;
+}
+
+#post-date {
+    font-size: 1.75em;
+}
+
+#post-content {
+    font-size: 1.25em;
+    margin-top: 1em;
+    padding: 1em;
+    border: 3px double black;
+    background-color: white;
+    text-align: left;
+}

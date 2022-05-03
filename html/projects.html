@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="Projects Description Page" />
+	<meta name="author" content="Tyler Lentz" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Projects</title>
+	<link href="../favicon.ico" rel="icon" />
+	<link href="../css/global-screen.css" rel="stylesheet" media="screen"/>
+	<link href="../css/projects-screen.css" rel="stylesheet" media="screen"/>
+</head>
+
+<body>
+	<header>
+        <nav>
+            <ul>
+				<li><a href="/">Home</a></li>
+                <li><a href="contact-me.html">Contact Me</a></li>
+                <li><a href="about-me.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+	</header>
+
+	<main>
+		<h1>Projects</h1>
+
+		<hr>
+
+		<section>
+			<h2> Triton UAS Projects </h2>
+			<!-- I had this as a section but the html validator gave me a warning saying sections should have headings,
+			     so I made it a div. I'm not sure if I should be ok with the warning, but I know I don't really want
+				 an extra heading here.-->
+			<div id="tuas-introduction">
+				<figure>
+					<picture>
+						<source srcset="../images/swallow-banner-bg.jpg" type="image/jpg" 
+								media="(min-width: 52rem)">
+						<img src="../images/swallow-banner-bg-cropped.jpg" width=800 height=520 alt="Picture of The Swallow taking off">
+					</picture>
+					<figcaption>One of our planes, dubbed <i>"The Swallow,"</i> taking off at a test flight.</figcaption>
+				</figure>
+				<p>
+					<a href="https://tuas.ucsd.edu">Triton UAS</a> is a interdisciplinary student-led engineering project team which constructs an autonomous plane to compete in the
+					international <a href="https://www.auvsi-suas.org/">AUVSI SUAS</a> competition. The team is split into four subteams: Airframe, Embedded,
+					Software, and Business. As a lead member in the Software team, it is my and my co-lead's responsibility to ensure that all of the 
+					software on the plane runs without error so that we can score points by autonomously identifying ground targets using machine
+					learning, pathing our plane to hit waypoints while avoiding obstacles, and sending this information over HTTP to the judging server. 
+					Here is a compilation of the projects I have worked on which I am most proud of.
+				</p>
+			</div>
+			<section class="project" id="backend-project">
+				<h3>Backend Redesign</h3>
+				<p>
+					Upon joining the club, I decided to start working on the Ground Control Station backend, called Hub. However, the old version
+					of Hub was not well documented, and nobody who had originally worked on it was still around. Therefore, we decided to rebuild
+					it from the ground up. We decided to create just a simple HTTP server because we did not need anything too complicated. The
+					purpose of Hub is to manage the flow of information between the other components of the software pipeline, namely the Computer
+					Vision Server and Path Planning Server, the competition's judging server, and the plane itself.
+				</p>
+				<table>
+					<caption><b>Project Information</b></caption>
+					<colgroup>
+						<col class="table-status">
+						<col class="table-languages">
+						<col class="table-contributors">
+					</colgroup>
+					<tr>
+						<th>Status</th>
+						<th>Languages Used</th>
+						<th>Number of Contributors</th>
+					</tr>
+					<tr>
+						<td>Ongoing</td>
+						<td>Go</td>
+						<td>About 6</td>
+					</tr>
+				</table>
+				<p>
+					Personally, I have been heavily involved in the structure of the server and in defining what endpoints are necessary. Also,
+					I completely implemented the connection with the judging server. Currently, I now have more people on this task, so we have
+					multiple people working on the computer vision connection, path planning connection, and the plane connection itself.
+				</p>
+				<div>
+					<h4>Skills Developed</h4>
+					<!--Div so that we can put a border arond the list and include the bullets-->
+					<div class="skills-list-wrapper">
+						<ul>
+							<li><strong>Linux Command Line</strong></li>
+							<li>Go</li>
+							<li>HTTP</li>
+							<li>Concurrent Programming</li>
+							<li>Docker</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section class="project" id="pathplanning-project">
+				<h3>RRT Path Planning</h3>
+				<p>
+					In order to complete the competition's new dynamic obstacle avoidance task&mdash;essentially avoiding another team's plane that
+					is also flying at the same time&mdash;we decided to redesign our path planning algorithm, since the old one could not handle
+					these dynamic changes. As a team, we  decided to start implementing an algorithm that utilizes RRT, an algorithm which 
+					in essence generates paths by randomly sampling points in a space and then finding the nodes and edges which provide 
+					the least costly path. This algorithm will be much more applicable to the dynamic obstacle task, and should
+					cover more edge cases in obstacle placement that our old algorithm could not solve.
+				</p>
+				<table>
+					<caption><b>Project Information</b></caption>
+					<colgroup>
+						<col class="table-status">
+						<col class="table-languages">
+						<col class="table-contributors">
+					</colgroup>
+					<tr>
+						<th>Status</th>
+						<th>Languages Used</th>
+						<th>Number of Contributors</th>
+					</tr>
+					<tr>
+						<td>Ongoing</td>
+						<td>Python</td>
+						<td>About 6</td>
+					</tr>
+				</table>
+				<p>
+					Since I was am the lead member who started this project, I have been the main person in charge of the planning, from what 
+					resources to use to how to structure the codebase. I have managed rougly 5 other members making sure that we are all coordinated
+					and working on different parts of the project simultaneously. Also, I have spent lots of time understanding and modifying a
+					reference implementation to fit our specific needs.
+				</p>
+				<div>
+					<h4>Skills Developed</h4>
+					<div class="skills-list-wrapper">
+						<ul>
+							<li><strong>Project Management</strong></li>
+							<li>Python</li>
+							<li>Pathing Algorithms</li>
+							<li>HTTP</li>
+							<li>Linux Command Line</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+		</section>
+		<hr>
+		<section>
+			<h2> Personal Projects </h2>
+
+			<section class="project">
+				<h3>Harp of the Gods</h3>
+				<ul class="gallery">
+					<li>
+						<figure>
+							<picture>
+								<source srcset="../images/robber-battle.webp" type="image/webp">
+								<img src="../images/robber-battle.jpg" width=400 height=468 alt="Battle">
+							</picture>
+							<figcaption>A real-time battle in the game</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<picture>
+								<source srcset="../images/harp.webp" type="image/webp">
+								<img src="../images/harp.png" width=413 height=398 alt="Harp">
+							</picture>
+							<figcaption>The "Harp of the Gods"</figcaption>
+						</figure>
+					</li>
+				</ul>
+				<p>
+					This was a sort of pet project through which I essentially learned all of my background in programming knowledge. This project went
+					through a number of iterative phases as I learned more and more programming constructs. The first iterations (which unfortunately
+					no longer exist since I didn't know about version control at the time) were much simpler games that didn't utilize OOP. The version
+					linked here is an "open-world" RPG game inspired by the original Legend of Zelda. You travel around the world, find dungeons, and
+					eventually are able to enter the final dungeon once you have gathered all of the Harp pieces.
+				</p>
+				<table>
+					<caption><b>Project Information</b></caption>
+					<colgroup>
+						<col class="table-dev-period">
+						<col class="table-languages">
+						<col class="table-operating-system">
+						<col class="table-github">
+						<col class="table-download">
+					</colgroup>
+					<tr>
+						<th>Time Period</th>
+						<th>Languages</th>
+						<th>Required OS</th>
+						<th>On Github?</th>
+						<th>Download</th>
+					</tr>
+					<tr>
+						<td>2016-2020</td>
+						<td>C++</td>
+						<td><em>Windows Only</em></td>
+						<td><a href="https://github.com/Tyler-Lentz/DungeonProject">Github</a></td>
+						<td><a href="https://drive.google.com/file/d/1ysZ9ICXBweyoCCUl_M0L_nIao-dHimjk/view?usp=sharing">Download</a></td>
+					</tr>
+				</table>
+				<p>
+					Looking back at my work I'm confused by a lot of the decisions I made, but I think it's cool that I was able to ignite 
+					a passion for programming while developing something over a large period of my life.
+				</p>
+				<div>
+					<h4>Skills Developed</h4>
+					<div class="skills-list-wrapper">
+						<ul>
+							<li>C++</li>
+							<li>Object Oriented Programming</li>
+							<li>Basic Git/GitHub</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+
+			<section class="project">
+				<h3>Chrono Defenders</h3>
+				<ul class="gallery">
+					<li>
+						<figure>
+							<picture>
+								<source srcset="../images/samurai-battle.webp" type="image/webp">
+								<img src="../images/samurai-battle.jpg" width=500 height=350 alt="Battle">
+							</picture>
+							<figcaption>A turn-based battle versus a Ghost</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<picture>
+								<source srcset="../images/catacombs-map.webp" type="image/webp">
+								<img src="../images/catacombs-map.png" width=500 height=346 alt="Game Map">
+							</picture>
+							<figcaption>The first section of the game's map</figcaption>
+						</figure>
+					</li>
+				</ul>
+				<p>
+					After months in early covid quarantine, I wanted to go back to Harp of the Gods and continue developing it, but by that time
+					I realized that it would be easier and more fulfulling to start from scratch and learn from all the mistakes I made previously.
+					So, I decided to make a new game in the same vein, but I wanted to make it with better programming habits and methodologies. If the
+					inspiration for the previous game was the original Legend of Zelda, then the inspiration for this game was definitely Slay
+					The Spire, except with my own spin on it. In this game, you control a party of three characters: The Samurai, The Sorcerer, and
+					The Gunslinger through a series of battles. The main gameplay loop involves defeating enemies, gaining experience, finding
+					items and learning new, more powerful moves. I think the battle system is somewhat sophisticated, so while it definitely isn't
+					incredibly balanced, I find that there's a surprising amount of depth in the combat that even I didn't expect while I was making
+					it.
+				</p>	
+				<table>
+					<caption><b>Project Information</b></caption>
+					<colgroup>
+						<col class="table-dev-period">
+						<col class="table-languages">
+						<col class="table-operating-system">
+						<col class="table-github">
+						<col class="table-download">
+					</colgroup>
+					<tr>
+						<th>Time Period</th>
+						<th>Languages</th>
+						<th>Required OS</th>
+						<th>On Github?</th>
+						<th>Download</th>
+					</tr>
+					<tr>
+						<td>2020-2021</td>
+						<td>C++</td>
+						<td><em>Windows Only</em></td>
+						<td><a href="https://github.com/Tyler-Lentz/ChronoDefenders">Github</a></td>
+						<td><a href="https://drive.google.com/file/d/1X8ThZ-2bgOPDH2zBczUNg2tCbRMPxl10/view?usp=sharing">Download</a></td>
+					</tr>
+				</table>
+				<p>
+					While it certainly isn't perfect, this project definitely marked an improvement
+					in my coding ability, and I still enjoy playing it sometimes.
+				</p>
+				<div>
+					<h4>Skills Developed</h4>
+					<div class="skills-list-wrapper">
+						<ul>
+							<li>C++</li>
+							<li>Object Oriented Programming</li>
+							<li>Polymorphism</li>
+							<li>Git/GitHub</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+		</section>
+
+	</main>
+
+</body>
+
+</html>

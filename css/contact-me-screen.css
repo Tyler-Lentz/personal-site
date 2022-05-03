@@ -1,0 +1,103 @@
+nav > ul > li:nth-child(2) > a {
+    text-decoration: underline;
+}
+
+body {
+    --legend-font-size: 1.5rem;
+    --legend-padding-topbot: 1%;
+
+    --form-gap: 1rem;
+
+    --text-input-height: 2em;
+    --text-input-font-size: 1.5em;
+    --text-input-padding: 1em 0.5em 1em 0.5em;
+    --text-input-border-radius: 5%;
+    --text-input-margin: 0.75em;
+
+    --submit-input-padding: 1em 3em 1em 3em;
+    --submit-input-background-color: silver;
+    --submit-input-border-width: 2px;
+    --submit-input-border-color: black; 
+    --submit-input-border-style: solid; 
+    --submit-input-background-hover: floralwhite;
+
+    --textarea-width: 35em;
+    --textarea-width-shrink: 18em;
+    --textarea-height: 10em;
+    --textarea-font-size: 1.25em;
+    --textarea-padding: 0.5em;
+    --textarea-margin: 0.75em;
+}
+
+
+legend {
+    text-align: center;
+    font-size: var(--legend-font-size);
+    padding-top: var(--legend-padding-topbot);
+    padding-bottom: var(--legend-padding-topbot);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--form-gap);
+}
+
+fieldset {
+    align-self: center;
+}
+
+label {
+    display: block;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="email"] {
+    border: none;
+    height: var(--text-input-height);
+    font-size: var(--text-input-font-size);
+    padding: var(--text-input-padding);
+    border-radius: var(--text-input-border-radius);
+    margin: var(--text-input-margin);
+    text-align: center;
+}
+
+input[type="submit"] {
+    cursor:pointer;    
+    padding: var(--submit-input-padding);
+    background-color: var(--submit-input-background-color);
+    font-weight: bold;
+    border-width: var(--submit-input-border-width);
+    border-color: var(--submit-input-border-color);
+    border-style: var(--submit-input-border-style);
+}
+
+input[type="submit"]:hover {
+    background-color: var(--submit-input-background-hover);
+}
+
+textarea {
+    width: var(--textarea-width);
+    height: var(--textarea-height);
+    resize: none;
+    font-size: var(--textarea-font-size);
+    border: none;
+    padding: var(--textarea-padding);
+    margin: var(--textarea-margin);
+}
+
+/* Shrink the text area if the window gets too small */
+@media (max-width: 47rem) {
+    textarea {
+        width: var(--textarea-width-shrink);
+        overflow-x: hidden;
+    }
+}
+
+noscript {
+    text-align: center;
+    margin: 1em;
+}

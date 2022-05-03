@@ -1,0 +1,98 @@
+/* Underlining the current page in the nav bar */
+nav > ul > li:nth-child(1) > a {
+    text-decoration: underline;
+}
+
+/* Setting variables */
+body {
+   --timeline-width: 67%;
+   --timeline-border-width: 0.25em;
+   --timeline-border-color: black;
+   --timeline-border-type: double;
+   --timeline-backline-color: royalblue;
+   --timeline-backline-size: 0.1em 100%;
+   --timeline-background-color: skyblue;
+
+   --timeline-item-margin: 2em;
+   --timeline-item-background-color: white;
+   --timeline-item-padding: 0.25em;
+
+   --heading-margins: 1em 0em;
+   --footer-margins: 1em;
+
+   --timeline-hover-font-size: 1.25em;
+   --timeline-hover-transition-time: 1s;
+
+}
+
+/* Styling for the timeline container itself */
+#timeline {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   flex-direction: column;
+   list-style: none;
+   align-items:center;
+   width: var(--timeline-width);
+   margin: auto;
+   padding: 3em;
+
+   border-style: var(--timeline-border-type);
+   border-color: var(--timeline-border-color);
+   border-width: var(--timeline-border-width);
+   background-color: var(--timeline-background-color);
+
+   /* Cool thing I found from StackOverflow that puts a line down the center of a block element */
+   /* https://stackoverflow.com/questions/1179928/how-can-i-put-a-vertical-line-down-the-center-of-a-div */
+   background-image: linear-gradient(royalblue,royalblue);
+   background-size: var(--timeline-backline-size);
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+
+/* Styling the timeline items */
+#timeline li {
+   background-color: var(--timeline-item-background-color);
+   align-self: center;
+   margin: var(--timeline-item-margin);
+   border-style: var(--timeline-border-type);
+   border-color: var(--timeline-border-color);
+   border-width: var(--timeline-border-width);
+   padding: var(--timeline-item-padding);
+
+   transition: font-size var(--timeline-hover-transition-time);
+}
+
+#timeline li:hover {
+   font-size: var(--timeline-hover-font-size);
+}
+
+/* Overriding the global centering on headers */
+ol h3 {
+   text-align: left; 
+}
+
+/* Making the spacing above the timeline look right */
+h2 {
+   margin: var(--heading-margins);
+}
+
+/* Making the footer look right */
+footer {
+   text-align: center;
+   padding: var(--footer-margins);
+}
+
+/* for hw links section */
+
+aside {
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   flex-direction:column;
+}
+
+aside * {
+   margin: 1%;
+   font-family: "Roboto", sans-serif;
+}

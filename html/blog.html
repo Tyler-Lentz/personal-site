@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="Tyler's Blog" />
+	<meta name="author" content="Tyler Lentz" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Blog</title>
+	<link href="favicon.ico" rel="icon" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.6/purify.min.js"></script>
+    <script type="module" src="../js/blog.js"></script>
+    <script type="module" src="../js/date.js"></script>
+	<link href="../css/global-screen.css" rel="stylesheet" media="screen"/>
+	<link href="../css/blog.css" rel="stylesheet" media="screen"/>
+</head>
+
+<body>
+	<header>
+        <nav>
+            <ul>
+				<li><a href="/">Home</a></li>
+                <li><a href="contact-me.html">Contact Me</a></li>
+                <li><a href="about-me.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+	</header>
+    <main>
+        <h1>Tyler's Blog</h1>
+        <hr>
+        <aside id="blog-bar">
+            <div id="login-container">
+                <em id="login-display"></em>
+                <ul id="login-button-list">
+                    <li>
+                        <button id="add-post-button" class="require-auth" style="visibility: hidden;">Add Post</button>
+                    </li>
+                    <li>
+                        <button id="login-button" class="require-no-auth" style="visibility: hidden;">Log In</button>
+                    </li>
+                    <li>
+                        <button id="logout-button" class="require-auth" style="visibility: hidden;">Log Out</button>
+                    </li>
+                </ul>
+            </div>
+            <form id="filter-form">
+                <fieldset>
+                    <legend>Select Tags</legend>
+                    <input type="checkbox" id="filter-work" name="filter-work" value="Work" checked> 
+                    <label for="filter-work">Work</label>
+                    <input type="checkbox" id="filter-personal" name="filter-personal" value="Personal" checked> 
+                    <label for="filter-personal">Personal</label>
+                    <input type="submit" value="Filter" id="filter-button">
+                </fieldset>
+            </form>
+        </aside>
+        <output id="post-list-output"></output>
+    </main>
+    <noscript>
+        <p>
+            This page requires Javascript to run properly.
+        </p>
+    </noscript>
+</body>

@@ -1,0 +1,183 @@
+nav > ul > li:nth-child(4) > a {
+    text-decoration: underline;
+}
+
+/* Variables */
+body {
+    --paragraph-margins: 0% 2% 1% 2%;
+    --deep-header-margins: 1%;
+
+    --main-section-flex-margins: 0% 5%;
+    --main-section-flex-items-margins: 1% 0%;
+
+    --tuas-image-shrink: 100%;
+    --gallery-image-shrink: 70%;
+
+    --main-section-flex-margins-shrink: 1%;
+
+    --project-background-color: white;
+    --project-border-style: solid;
+    --project-border-width: 0.125em;
+    --project-border-color: black;
+    --project-padding: 1em;
+
+    --project-table-border-color: black;
+    --project-table-border-style: double;
+    --project-table-border-width: 0.25em;
+    --project-table-background-color: gainsboro;
+    --project-table-bottom-margin: 1em;
+
+    --project-table-inner-border-color: black;
+    --project-table-inner-border-style: solid;
+    --project-table-inner-border-width: 0.1em;
+    --project-table-inner-padding: 1em;
+
+    --project-skills-list-margin: 1.25em;
+    --project-skills-list-border-width: 0.25em;
+    --project-skills-list-border-color: black;
+    --project-skills-list-border-style: double;
+    --project-skills-list-background-color: gainsboro;
+}
+
+/* Margins specific to this page, because of how they're oriented within flex containers*/
+p {
+    margin: var(--paragraph-margins);
+}
+
+h3, h4 {
+    margin: var(--deep-header-margins);
+}
+
+figcaption {
+    text-align: center;
+}
+
+/* Each section is its own flex container */
+main > section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: var(--main-section-flex-margins);
+}
+
+main > section > * {
+    margin: var(--main-section-flex-items-margins);
+}
+
+/* Grid layout for when the size is big enough for it to look good */
+#tuas-introduction {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows:auto;
+}
+
+#tuas-introduction > figure {
+    grid-column: 1/2;
+    grid-row: 1/2; 
+}
+
+#tuas-introduction > p {
+    grid-column: 2/3;
+    grid-row: 1/2; 
+    align-self: center;
+}
+
+/* Switch top tuas intro section into flex mode if too small */
+@media (max-width: 86rem) {
+    #tuas-introduction {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 52rem) {
+    /* Shrink pictures if the window gets even smaller */
+    #tuas-introduction img {
+        width: var(--tuas-image-shrink);
+        height: var(--tuas-image-shrink);
+    }
+
+    .gallery img {
+        width: var(--gallery-image-shrink);
+        height: var(--gallery-image-shrink);
+    }
+
+    /* Reduce the margins around the sections since these start to
+       take up too much space */
+    main > section {
+        margin: var(--main-margins-shrink);
+    }
+}
+
+/*
+   Make the tables be displayed vertically once the screen gets 
+   small enough for this to matter. Found this solution from this stack overflow post:
+   https://stackoverflow.com/questions/6297591/how-to-invert-transpose-the-rows-and-columns-of-an-html-table
+*/
+@media (max-width: 40rem) {
+    tr { 
+        display: block; 
+        float: left; 
+    }
+    th, td {
+         display: block; 
+    }
+
+    main > section {
+        overflow-x: hidden;
+    }
+}
+
+
+/* Each project itself is a flex container */
+.project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--project-background-color);
+    border-width: var(--project-border-width);
+    border-color: var(--project-border-color);
+    border-style: var(--project-border-style);
+    padding: var(--project-padding); 
+}
+
+.project table{
+    border-collapse: collapse;
+    border-width: var(--project-table-border-width);
+    border-style: var(--project-table-border-style);
+    border-color: var(--project-table-border-color);
+    background-color:var(--project-table-background-color);
+    margin-bottom: var(--project-table-bottom-margin);
+}
+
+.project table th,
+.project table td {
+    text-align: center;
+    padding: var(--project-table-inner-padding);
+    border-color: var(--project-table-inner-border-color);
+    border-width: var(--project-table-inner-border-width);
+    border-style: var(--project-table-inner-border-style);
+}
+
+.project table tr {
+    border-color: var(--project-table-inner-border-color);
+    border-width: var(--project-table-inner-border-width);
+    border-style: var(--project-table-inner-border-style);
+}
+
+/* Weird stuff here to get the background box around the bullet points of the list */
+
+.project ul {
+    margin: var(--project-skills-list-margin);
+}
+
+.skills-list-wrapper {
+    border-color: var(--project-skills-list-border-color);
+    border-style: var(--project-skills-list-border-style);
+    border-width: var(--project-skills-list-border-width);
+    background-color: var(--project-skills-list-background-color);
+}
